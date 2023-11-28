@@ -5,7 +5,10 @@ use opcua::server::prelude::*;
 use opcua::sync::Mutex;
 
 fn main() {
-    let mut server = Server::new(ServerConfig::load(&PathBuf::from("../server.conf")).unwrap());
+    let server_config = ServerConfig::load(&PathBuf::from("./server.conf"))
+        .expect("Failed to load server configuration.");
+
+    let mut server = Server::new(server_config);
 
     let ns = {
         let address_space = server.address_space();
