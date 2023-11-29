@@ -1,12 +1,18 @@
-use std::path::PathBuf;
 use std::sync::Arc;
 
 use opcua::server::prelude::*;
 use opcua::sync::Mutex;
 
 fn main() {
-    let server_config = ServerConfig::load(&PathBuf::from("./server.conf"))
-        .expect("Failed to load server configuration.");
+    // The server will look for the configuration in the same direcotry as its executable
+    let server_conf_path = std::env::current_exe()
+        .unwrap()
+        .parent()
+        .unwrap()
+        .join("server.conf");
+
+    let server_config =
+        ServerConfig::load(&server_conf_path).expect("Failed to load server configuration.");
 
     let mut server = Server::new(server_config);
 

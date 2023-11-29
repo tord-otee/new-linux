@@ -7,4 +7,10 @@ edition = "2021"
 
 [dependencies]
 chrono = "0.4.31"
-opcua="0.11.0"
+
+# Pulling from Git bleeding edge resolves https://github.com/locka99/opcua/issues/294
+# but is not stable. TODO: remove once opcua 0.12.0 is released
+opcua = { git = "https://github.com/locka99/opcua.git", branch = "master", features = [
+    "console-logging",
+    "server",
+] }
