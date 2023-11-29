@@ -1,0 +1,16 @@
+[package]
+name = "otee-opcua"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = "0.4.31"
+
+# Pulling from Git bleeding edge resolves https://github.com/locka99/opcua/issues/294
+# but is not stable. TODO: remove once opcua 0.12.0 is released
+opcua = { git = "https://github.com/locka99/opcua.git", branch = "master", features = [
+    "console-logging",
+    "server",
+] }
