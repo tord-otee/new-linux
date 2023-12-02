@@ -25,4 +25,5 @@ echo -e "\n"
 sleep 6
 
 curl -fsSL https://tailscale.com/install.sh | sh
+echo "alias ll='ls -alF'" >> ~/.bashrc
 #sudo apt-get install -y tig
