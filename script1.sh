@@ -17,6 +17,11 @@ while read -r p ; do sudo apt-get install -y $p ; done < <(cat << "EOF"
 EOF
 )
 
+echo "alias ll='ls -lap'" >> ~/.bashrc
+source ~/.bashrc
+cp .tmux.conf ~/
+cp .vimrc ~/
+
 echo installing the nice-to-have pre-requisites
 echo you have 5 seconds to proceed ...
 echo or
@@ -24,6 +29,5 @@ echo hit Ctrl+C to quit
 echo -e "\n"
 sleep 6
 
+
 curl -fsSL https://tailscale.com/install.sh | sh
-echo "alias ll='ls -alF'" >> ~/.bashrc
-#sudo apt-get install -y tig
