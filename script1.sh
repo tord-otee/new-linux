@@ -31,3 +31,5 @@ sleep 6
 
 
 curl -fsSL https://tailscale.com/install.sh | sh
+
+echo "To copy key from your host, do this: ssh-copy-id -i ~/.ssh/filename.pub user@ip.add.ress"
