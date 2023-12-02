@@ -24,5 +24,5 @@ echo hit Ctrl+C to quit
 echo -e "\n"
 sleep 6
 
-echo just kidding nothing happened
+curl -fsSL https://tailscale.com/install.sh | sh
 #sudo apt-get install -y tig
