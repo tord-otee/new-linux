@@ -17,7 +17,7 @@ while read -r p ; do sudo apt-get install -y $p ; done < <(cat << "EOF"
 EOF
 )
 
-echo "alias ll='ls -lap'" >> ~/.bashrc
+cat bashrc_addon >> ~/.bashrc
 source ~/.bashrc
 cp .tmux.conf ~/
 cp .vimrc ~/
